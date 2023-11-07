@@ -33,8 +33,8 @@ function translate(input) {
           // checks if prefix first position, or stem first position when prefix empty is uppercase
           stem = stem[0].toUpperCase().concat(stem.substring(1));
         }
-        let stemArr = stem.split('');
-        if (stemArr.every((letter) => VOWELS.includes(letter.toLowerCase()) && prefix === '')) {
+        let stemArr = stem.split(''); // creates a array from stem
+        if (stemArr.every((letter) => VOWELS.includes(letter.toLowerCase()) && prefix === '')) { //check if is composed only from vowels
           result = result.concat(stem + 'yay')
         } else {
           result = result.concat(stem + prefix.toLowerCase() + 'ay');
@@ -88,5 +88,3 @@ console.log('\nresult:   '+ translate('I am a developer'));
 console.log('expected: Iyay amay ayay eveloperday')
 console.log('\nresult:   '+ translate('I am not a powerlifter'));
 console.log('expected: Iyay amay otnay ayay owerlifterpay')
-
-
